@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block content %}
+	{% for post in posts %}
+		<article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <h4><a class="mr-2" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h4>
+            </div>
+
+            <div class="box">
+              <h6 class="article-title">{{ post.texte }}</h6>
+              <img class="rounded-circle account-img flotte" src="{{ post.photo.url }}">
+            </div>
+
+            <div class="article-metadata2"></div>
+            <p class="article-content">{{ post.tags }}</p>
+            
+
+          </div>
+        </article>
+	{% endfor %}
+{% endblock content %}
